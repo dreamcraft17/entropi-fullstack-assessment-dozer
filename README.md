@@ -85,13 +85,15 @@ So in total it landed around **14–15 hours** of work.
 
 ## Live demo / hosting
 
-For the bonus “live demo” part of the brief I wired the app to PostgreSQL on **Railway**.  
+- **Vercel demo**: `https://entropi-fullstack-assessment-dozer.vercel.app/`
+
+For the bonus “live demo” part of the brief I wired the app to PostgreSQL on **Railway**, then deployed the Next.js app to **Vercel** pointing at the same database.
+
 The intended setup is:
 
 - Create a PostgreSQL instance on Railway.
-- Set `DATABASE_URL` in both local `.env` and in the Railway service env vars to the given connection string.
+- Set `DATABASE_URL` in both local `.env` and in the Vercel/Railway service env vars to the given connection string.
 - Set `JWT_SECRET` to any long random string.
-- Deploy the Next.js app (either on Railway itself or on Vercel pointing at the same `DATABASE_URL`).
 
 Once deployed, the flows are the same as locally:
 
@@ -99,7 +101,7 @@ Once deployed, the flows are the same as locally:
 - Register an account and go to `/dashboard`.
 - Use **View profile** to open the public page.
 
-I haven’t hard‑coded any environment‑specific values in the code; all the deployment‑specific bits live in env vars.
+All deployment‑specific details live in env vars; nothing is hard‑coded for a particular environment.
 
 ---
 

@@ -1,0 +1,4 @@
+/** Force Next.js to use Babel instead of SWC (avoids SWC binary issues on Windows) */
+module.exports = {
+  presets: ["next/babel"],
+};

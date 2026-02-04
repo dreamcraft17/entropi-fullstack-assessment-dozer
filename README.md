@@ -10,7 +10,7 @@ I focused on getting the core flows working first (auth, public profile, dashboa
 
 - Next.js 14 (App Router, TypeScript)
 - Tailwind CSS
-- SQLite + Prisma
+- PostgreSQL (Railway) + Prisma
 - Next.js API routes
 - JWT auth stored in HTTP-only cookie
 
@@ -83,6 +83,26 @@ So in total it landed around **14–15 hours** of work.
 
 ---
 
+## Live demo / hosting
+
+For the bonus “live demo” part of the brief I wired the app to PostgreSQL on **Railway**.  
+The intended setup is:
+
+- Create a PostgreSQL instance on Railway.
+- Set `DATABASE_URL` in both local `.env` and in the Railway service env vars to the given connection string.
+- Set `JWT_SECRET` to any long random string.
+- Deploy the Next.js app (either on Railway itself or on Vercel pointing at the same `DATABASE_URL`).
+
+Once deployed, the flows are the same as locally:
+
+- Open the deployed URL.
+- Register an account and go to `/dashboard`.
+- Use **View profile** to open the public page.
+
+I haven’t hard‑coded any environment‑specific values in the code; all the deployment‑specific bits live in env vars.
+
+---
+
 ## Setup instructions
 
 All commands are run from the project root.
@@ -117,6 +137,7 @@ All commands are run from the project root.
 
 ## Environment notes
 
+- `DATABASE_URL` – PostgreSQL connection string (for example the one Railway gives you).
 - `JWT_SECRET` – secret used to sign JWTs. If unset, the project falls back to a dev‑only value.
 - `.env.local` already contains `NEXT_IGNORE_INCORRECT_LOCKFILE=1` to avoid a Windows/SWC lockfile issue.
 

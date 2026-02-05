@@ -24,11 +24,11 @@ export default async function DashboardLayout({
     <div className="min-h-screen transition-colors duration-[400ms] ease-[cubic-bezier(0.33,1,0.68,1)]" style={{ background: "var(--bg)", color: "var(--text)" }}>
       <DashboardSidebar />
       <header
-        className="sticky top-0 z-10 flex items-center justify-between gap-4 border-b px-4 py-4 pl-4 pr-4 transition-[background-color,border-color,box-shadow] duration-[400ms] ease-[cubic-bezier(0.33,1,0.68,1)] sm:pl-56 sm:pr-6"
+        className="sticky top-0 z-10 flex flex-wrap items-center justify-between gap-3 border-b px-4 py-4 pl-14 pr-4 transition-[background-color,border-color,box-shadow] duration-[400ms] ease-[cubic-bezier(0.33,1,0.68,1)] sm:pl-56 sm:pr-6"
         style={{ background: "var(--bg-card)", borderColor: "var(--border)", boxShadow: "var(--shadow-sm)" }}
       >
         <h1 className="font-display text-lg font-bold tracking-tight sm:text-xl">Dashboard</h1>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3">
           <Link
             href={`/p/${session.userId}`}
             target="_blank"

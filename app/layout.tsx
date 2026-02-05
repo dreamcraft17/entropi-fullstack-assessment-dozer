@@ -20,6 +20,8 @@ export const metadata: Metadata = {
   description: "Your one link for everything you share. Build your page in minutes.",
 };
 
+export const viewport = { width: "device-width", initialScale: 1 };
+
 const themeScript = `
 (function() {
   var t = localStorage.getItem('link-in-bio-theme');
